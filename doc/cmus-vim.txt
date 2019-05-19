@@ -1,0 +1,65 @@
+*cmus.vim*    control cmus from vim
+
+===============================================================================
+
+                                             ▀
+  ▄▄▄   ▄▄▄▄▄  ▄   ▄   ▄▄▄          ▄   ▄  ▄▄▄    ▄▄▄▄▄
+ █▀  ▀  █ █ █  █   █  █   ▀         ▀▄ ▄▀    █    █ █ █
+ █      █ █ █  █   █   ▀▀▀▄          █▄█     █    █ █ █
+ ▀█▄▄▀  █ █ █  ▀▄▄▀█  ▀▄▄▄▀    █      █    ▄▄█▄▄  █ █ █
+
+===============================================================================
+CONTENTS                                                          *cmus-contents*
+
+    1. Intro........................................|cmus-intro|
+    2. Commands.....................................|cmus-commands|
+
+===============================================================================
+INTRO                                                                *cmus-intro*
+
+`cmus-vim` is simple wrapper to manipulate cmus from vim.
+`cmus-vim` use `cmus-remote` to integrate with cmus.
+About `cmus`, please refer to https://cmus.github.io/
+
+===============================================================================
+COMMANDS                                                          *cmus-commands*
+
+:CmusStatus [Key]
+
+  Outputs current status of cmus.
+  If [key] is specified, just output status of that key.
+  This is based on `cmus-remote --query`
+
+:CmusStart
+
+  Tell cmus to start playing music.
+  This is based on `cmus-remote --play`
+
+:CmusStop
+
+  Tell cmus to stop playing music.
+  This is based on `cmus-remote --stop`
+
+:CmusPause
+
+  Tell cmus to pause music.
+  If executed twice, the music will be played again.
+  This is based on `cmus-remote --pause`
+
+:CmusPausePlayback
+
+  Tell cmus to pause playback.
+  This only pause music, don't restart playing if no music is played.
+  This is based on `cmus-remote --pause-playback`
+
+:CmusNext
+
+  Tell cmus to play next one.
+  This is based on `cmus-remote --next`
+
+:CmusPrev
+
+  Tell cmus to play previous one.
+  This is based on `cmus-remote --prev`
+
+vim:ft=help:nospell:norl
