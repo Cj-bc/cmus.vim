@@ -55,3 +55,23 @@ endfunc
 func! cmus#prev()
   call system("cmus-remote --prev")
 endfunc
+
+func! cmus#repeat()
+  call system("cmus-remote --repeat")
+endfunc
+
+func! cmus#suffle()
+  call system("cmus-remote --shuffle")
+endfunc
+
+func! cmus#volume(vol)
+  call system("cmus-remote --volume " . vol)
+endfunc
+
+func! cmus#seek(seek)
+  call system("cmus-remote --seek " . seek)
+endfunc
+
+func! cmus#file(file)
+  call system("cmus-remote --file " . file)
+endfunc
