@@ -1,9 +1,5 @@
-func! s:call_cmus_remote(arg)
-    system("cmus-remote " . arg)
-endfunc
-
 func! s:create_status_dict()
-  let s:raw_data = s:call_cmus_remote("-Q")
+  let s:raw_data = systemlist("cmus-remote -Q")
 
   let s:status = {}
   for line in s:raw_data
@@ -27,27 +23,26 @@ func! cmus#show_status()
   endfor
 endfunc
 
-
 func! cmus#start()
-  s:call_cmus_remote("--play")
+  call system("cmus-remote --start")
 endfunc
 
 func! cmus#stop()
-  s:call_cmus_remote("--stop")
+  call system("cmus-remote --stop")
 endfunc
 
 func! cmus#pause()
-  s:call_cmus_remote("--pause")
+  call system("cmus-remote --pause")
 endfunc
 
 func! cmus#pause_playback()
-  s:call_cmus_remote("--pause-playback")
+  call system("cmus-remote --pause-playback")
 endfunc
 
 func! cmus#next()
-  s:call_cmus_remote("--stop")
+  call system("cmus-remote --next")
 endfunc
 
 func! cmus#prev()
-  s:call_cmus_remote("--prev")
+  call system("cmus-remote --prev")
 endfunc
