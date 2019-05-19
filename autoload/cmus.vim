@@ -60,7 +60,7 @@ func! cmus#repeat()
   call system("cmus-remote --repeat")
 endfunc
 
-func! cmus#suffle()
+func! cmus#shuffle()
   call system("cmus-remote --shuffle")
 endfunc
 
