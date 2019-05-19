@@ -16,11 +16,20 @@ func! s:create_status_dict()
 endfunc
 
 
-func! cmus#show_status()
+func! cmus#show_status(target)
   let s:status = s:create_status_dict()
-  for [key, value] in items(s:status)
-    echo key . ': ' . value
-  endfor
+  if a:target == ""
+    for [key, value] in items(s:status)
+      echo key . ': ' . value
+    endfor
+    return
+  endif
+
+  if has_key(s:status, a:target)
+    echo a:target . ': ' . s:status[a:target]
+  else
+    echoe 'key "' . a:target . '" does not exist'
+  endif
 endfunc
 
 func! cmus#start()
