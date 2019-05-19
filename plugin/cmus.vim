@@ -1,4 +1,4 @@
-command! CmusStatus :call cmus#show_status()
+command! -nargs=? CmusStatus :call cmus#show_status("<args>")
 command! CmusStart :call cmus#start()
 command! CmusStop :call cmus#stop()
 command! CmusPause :call cmus#pause()
