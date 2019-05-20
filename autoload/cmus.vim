@@ -55,3 +55,11 @@ endfunc
 func! cmus#prev()
   call system("cmus-remote --prev")
 endfunc
+
+func! cmus#statusline(key)
+  let status = s:create_status_dict()
+  if has_key(status, a:key)
+    return "++ now playing " . status[a:key] . " ++"
+  endif
+  return ""
+endfunc
